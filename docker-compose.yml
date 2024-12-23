@@ -5,7 +5,7 @@ services:
         image: nginx:latest
         restart: always
         volumes:
-            - ${PATH}:/usr/share/nginx/html
+            - './':/usr/share/nginx/html
         ports:
             - "8008:80"            
         networks:
