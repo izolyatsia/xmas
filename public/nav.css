@@ -100,3 +100,21 @@
 	.year-arrow:hover .year-arrow-label,
 	.year-arrow:focus-visible .year-arrow-label { opacity: 1; }
 	@media print { .year-arrow { display: none; } }
+
+	/* Home (all years) link in the nav */
+	.cont ul li.nav-home a {
+		display: inline-flex;
+		align-items: center;
+		border: 0;
+	}
+	.cont ul li.nav-home svg {
+		width: 18px;
+		height: 18px;
+		display: block;
+		transition: color .15s ease, transform .15s ease;
+	}
+	.cont ul li.nav-home a:hover svg,
+	.cont ul li.nav-home a:focus-visible svg {
+		color: #2e7d32;
+		transform: scale(1.15);
+	}
