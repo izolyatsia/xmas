@@ -1,0 +1,11 @@
+# Netlify serves the committed output in public/ as-is.
+# There is no build step on Netlify: run `make build` locally and commit.
+[build]
+  publish = "public"
+
+# Shared images (card thumbnails, share images, logos): cache for a week,
+# then revalidate in the background. Names aren't fingerprinted, so keep it short.
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
