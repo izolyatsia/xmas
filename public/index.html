@@ -18,6 +18,18 @@
       --accent: #8C2108;
       --card: #ffffff;
     }
+    :root { color-scheme: light dark; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b1c1e;
+        --ink: #e6e7e8;
+        --accent: #f07c5c;
+        --card: #26282b;
+      }
+      header img { filter: invert(1) hue-rotate(180deg); }
+      .card { box-shadow: 0 1px 2px rgba(0,0,0,.5); }
+      .card:hover, .card:focus-visible { box-shadow: 0 12px 28px rgba(0,0,0,.6); }
+    }
     @view-transition { navigation: auto; }
     ::view-transition-group(root) { animation-duration: .35s; }
     @media (prefers-reduced-motion: reduce) {

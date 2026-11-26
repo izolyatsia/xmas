@@ -171,3 +171,35 @@
 		::view-transition-old(*),
 		::view-transition-new(*) { animation: none !important; }
 	}
+
+	/* ---- Dark mode ----
+	   Postcards keep their own (mostly white) blocks, like cards on a dark
+	   table; only the page chrome around them goes dark. */
+	@media (prefers-color-scheme: dark) {
+		.cont { background: #1b1c1e; }
+		.cont ul li a { color: #d8d9db; }
+		.cont ul li a.active { color: #fff; border-bottom-color: #fff; }
+
+		body.plain { background: #1b1c1e; }
+		body.plain .cont { background: transparent; }
+
+		/* black-on-transparent logos sitting directly on the page */
+		body.plain img.logo,
+		body.plain img[src$="izo-logo-2015.svg"] { filter: invert(1) hue-rotate(180deg); }
+
+		/* 2017 paints its grey on <html> and a wrapper table */
+		html:has(> body.plain) { background: #1b1c1e; }
+		body.plain table[bgcolor="#e6e7e8"] { background: transparent; }
+
+		/* e-mail footers (address, phone, social icons) on the page background */
+		body.plain .no-left-padding,
+		body.plain .no-left-padding * { color: #b9babd !important; }
+		body.plain .no-left-padding img { filter: invert(1); }
+
+		.cont ul li.nav-home a { background: #f1f1f2; color: #111; }
+
+		.year-arrow { background: rgba(40, 42, 45, .92); color: #e6e7e8; box-shadow: 0 2px 10px rgba(0, 0, 0, .6); }
+		.year-arrow:hover,
+		.year-arrow:focus-visible { background: #e6e7e8; color: #111; }
+		.year-arrow .year-arrow-label { background: #e6e7e8; color: #111; }
+	}
