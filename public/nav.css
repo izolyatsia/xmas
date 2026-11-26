@@ -107,8 +107,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 32px;
-		height: 32px;
+		width: 29px;
+		height: 29px;
 		margin-top: -1px;
 		border: 0;
 		border-radius: 50%;
@@ -122,8 +122,8 @@
 		box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
 	}
 	.cont ul li.nav-home svg {
-		width: 23px;
-		height: 23px;
+		width: 21px;
+		height: 21px;
 		display: block;
 		overflow: visible;
 	}
