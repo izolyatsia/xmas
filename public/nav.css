@@ -1,5 +1,7 @@
 
 	.cont {
+        position: relative;
+        z-index: 1000;
         background: #fff;
         display: flex;
         margin-left: -1rem;
@@ -26,4 +28,13 @@
 	.cont ul li a.active {
     	font-weight: bold;
     	border-bottom: 2px solid #000;
+	}
+
+	/* Pages without their own background artwork */
+	body.plain {
+		background: #e6e7e8;
+	}
+	body.plain .cont,
+	body.plain #bodyTable {
+		background: transparent;
 	}
