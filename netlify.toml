@@ -1,7 +1,7 @@
-# Netlify serves the committed output in public/ as-is.
+# Netlify deploys from `main`. The base/publish directory (public/) is set in
+# the Netlify dashboard — don't set `publish` here: it's resolved relative to
+# the dashboard's base directory (public/), so "public" would mean public/public.
 # There is no build step on Netlify: run `make build` locally and commit.
-[build]
-  publish = "public"
 
 # Shared images (card thumbnails, share images, logos): cache for a week,
 # then revalidate in the background. Names aren't fingerprinted, so keep it short.
