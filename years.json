@@ -1,0 +1,27 @@
+{
+  "_doc": "Single source of truth for the shared parts of the site. See README.md. Per-year fields: description (og/meta text), credit / credit_bottom (inner HTML of the credit slots), video (badge on card), thumb (source image for the card thumbnail, relative to public/), thumb_crop (e.g. 3:2, centre crop), thumb_fit (cover; default contain), card_bg (card background; auto-filled by --images when missing, set by hand to override), collage (cover|contain: include the thumbnail in the home share image).",
+  "site": {
+    "name": "IZOLYATSIA Xmas Archive",
+    "base_url": "https://xmas.izolyatsia.org",
+    "description_suffix": "From the IZOLYATSIA Xmas Archive, {first}–{last}.",
+    "home_description": "Holiday postcards and greetings from IZOLYATSIA. Platform for cultural initiatives, {first}–{last}."
+  },
+  "years": [
+    {"year": 2011, "description": "Postcard by Andrey Gorokhov.", "credit": "Postcard by Andrey Gorokhov", "thumb": "2011/1.jpg", "card_bg": "#ffffff", "collage": "contain"},
+    {"year": 2012, "description": "Postcard by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "credit_bottom": "Designed by Dima Sergeev", "thumb": "2012/xmas1.gif", "card_bg": "#6e6c72"},
+    {"year": 2013, "description": "Postcard by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "thumb": "2013/xmas-2012.gif", "card_bg": "#bebec0", "collage": "contain"},
+    {"year": 2014, "description": "Video greeting. Design by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "video": true, "thumb": "2014/bg.jpg", "thumb_crop": "3:2", "thumb_fit": "cover", "card_bg": "#8e6957"},
+    {"year": 2015, "description": "Postcard by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "thumb": "2015/postcard.gif", "card_bg": "#929b99", "collage": "contain"},
+    {"year": 2016, "description": "Postcard by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "thumb": "2016/postcard.jpg", "card_bg": "#131831", "collage": "contain"},
+    {"year": 2017, "description": "Postcard by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "thumb": "2017/header.gif", "card_bg": "#d4722a"},
+    {"year": 2018, "description": "Postcard by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "thumb": "2018/postcard.jpg", "card_bg": "#fef200", "collage": "cover"},
+    {"year": 2019, "description": "Postcard by Dima Sergeev.", "credit": "Postcard by Dima Sergeev", "thumb": "2019/postcard.gif", "card_bg": "#d8dcdf", "collage": "contain"},
+    {"year": 2020, "description": "Illustration by Anastasiia Khadzhinova.", "credit": "Illustration by Anastasiia Khadzhinova", "thumb": "2020/postcard.png", "card_bg": "#d8b9b5", "collage": "contain"},
+    {"year": 2021, "description": "Salt from the Soledar salt mine.", "credit": "Salt from Soledar salt mine / Сіль з Соледарських соляних шахт", "thumb": "2021/postcard.jpg", "card_bg": "#817e6b", "collage": "contain"},
+    {"year": 2022, "description": "Video greeting.", "video": true, "card_bg": "#14181c"},
+    {"year": 2023, "description": "Illustration by Anastasiia Ole.", "credit": "Illustration / Ілюстрація: <a href=\"https://linktr.ee/anastasiia.ole\" target=\"_blank\">Anastasiia Ole</a>", "thumb": "2023/postcard.jpg", "card_bg": "#12302b", "collage": "contain"},
+    {"year": 2024, "description": "Photo: Alexandra Clod, Katabasis (2023).", "credit": "<strong>Photo: Alexandra Clod, Katabasis (2023)</strong>\n<p>Created within the (Re)Grounding art residency program, supported by British Council Ukraine, IZOLYATSIA and D6 Culture in Transit. More about photo series: <a href=\"https://alexandraclod.com/katabasis\" target=\"_blank\">alexandraclod.com/katabasis</a>.</p>", "thumb": "2024/postcard.jpg", "card_bg": "#525049", "collage": "cover"},
+    {"year": 2025, "description": "Season’s greetings — resilient together.", "thumb": "2025/postcard.jpg", "card_bg": "#00376e", "collage": "contain"},
+    {"year": 2026, "description": "“Beyond the Frame” by Jim Stephenson in collaboration with Jenya Polosina.", "credit": "Image: “Beyond the Frame”. Jim Stephenson Architectural Photography &amp; Films in collaboration with Jenya Polosina.", "thumb": "2026/postcard.jpg", "card_bg": "#777878", "collage": "cover"}
+  ]
+}
