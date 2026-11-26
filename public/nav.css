@@ -101,22 +101,47 @@
 	.year-arrow:focus-visible .year-arrow-label { opacity: 1; }
 	@media print { .year-arrow { display: none; } }
 
-	/* Home (all years) link in the nav */
+	/* Home (all years) link in the nav: tree in a black circle with blinking toys */
+	.cont ul { align-items: center; }
 	.cont ul li.nav-home a {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		margin-top: -1px;
 		border: 0;
+		border-radius: 50%;
+		background: #000;
+		color: #fff;
+		transition: transform .15s ease, box-shadow .15s ease;
+	}
+	.cont ul li.nav-home a:hover,
+	.cont ul li.nav-home a:focus-visible {
+		transform: scale(1.12);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
 	}
 	.cont ul li.nav-home svg {
-		width: 18px;
-		height: 18px;
+		width: 23px;
+		height: 23px;
 		display: block;
-		transition: color .15s ease, transform .15s ease;
+		overflow: visible;
 	}
-	.cont ul li.nav-home a:hover svg,
-	.cont ul li.nav-home a:focus-visible svg {
-		color: #2e7d32;
-		transform: scale(1.15);
+	.nav-home .toy { animation: toy-blink 2.4s ease-in-out infinite; }
+	.nav-home .t1 { fill: #ffd43b; animation-delay: 0s; }
+	.nav-home .t2 { fill: #ff6b6b; animation-delay: -.4s; }
+	.nav-home .t3 { fill: #4dabf7; animation-delay: -1.6s; }
+	.nav-home .t4 { fill: #69db7c; animation-delay: -.9s; }
+	.nav-home .t5 { fill: #f783ac; animation-delay: -2s; }
+	.nav-home .t6 { fill: #ffa94d; animation-delay: -1.2s; }
+	@keyframes toy-blink {
+		0%, 100% { opacity: 1; }
+		45%      { opacity: 1; }
+		60%      { opacity: .12; }
+		85%      { opacity: .12; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.nav-home .toy { animation: none; }
 	}
 
 	/* ---- Page transitions (native cross-document View Transitions) ---- */
