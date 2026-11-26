@@ -118,3 +118,31 @@
 		color: #2e7d32;
 		transform: scale(1.15);
 	}
+
+	/* ---- Page transitions (native cross-document View Transitions) ---- */
+	@view-transition { navigation: auto; }
+
+	/* Nav and arrows stay put while the page slides underneath */
+	.cont { view-transition-name: year-nav; }
+	.year-arrow.prev { view-transition-name: year-prev; }
+	.year-arrow.next { view-transition-name: year-next; }
+
+	::view-transition-group(root) { animation-duration: .45s; }
+	::view-transition-old(root),
+	::view-transition-new(root) { animation-timing-function: cubic-bezier(.4, 0, .2, 1); }
+
+	html:active-view-transition-type(forward)::view-transition-old(root) { animation-name: vt-out-left; }
+	html:active-view-transition-type(forward)::view-transition-new(root) { animation-name: vt-in-right; }
+	html:active-view-transition-type(backward)::view-transition-old(root) { animation-name: vt-out-right; }
+	html:active-view-transition-type(backward)::view-transition-new(root) { animation-name: vt-in-left; }
+
+	@keyframes vt-out-left  { to   { transform: translateX(-30%); opacity: 0; } }
+	@keyframes vt-in-right  { from { transform: translateX(30%);  opacity: 0; } }
+	@keyframes vt-out-right { to   { transform: translateX(30%);  opacity: 0; } }
+	@keyframes vt-in-left   { from { transform: translateX(-30%); opacity: 0; } }
+
+	@media (prefers-reduced-motion: reduce) {
+		::view-transition-group(*),
+		::view-transition-old(*),
+		::view-transition-new(*) { animation: none !important; }
+	}

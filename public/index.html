@@ -7,6 +7,7 @@
   <meta property="og:title" content="IZOLYATSIA Xmas Archive">
   <meta property="og:image" content="./img/cards/2026.jpg">
   <link rel="icon" href="./favicon.ico">
+  <script src="./nav.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
@@ -16,6 +17,11 @@
       --ink: #3B403E;
       --accent: #8C2108;
       --card: #ffffff;
+    }
+    @view-transition { navigation: auto; }
+    ::view-transition-group(root) { animation-duration: .35s; }
+    @media (prefers-reduced-motion: reduce) {
+      ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
     }
     * { box-sizing: border-box; }
     body {
