@@ -1,89 +1,273 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <title>XMAS Archive</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-body {
-		font-family: 'Roboto', sans-serif;
-		background: #e6e7e8;
-}
-	
-h1 {
-			text-size: 4em;
-		text-transform: uppercase;
-color: #8C2108;
-		margin-left: 4rem;
-	}
-	
-
-	ul {
-		padding: 0;
-		display:flex;
-		flex-direction: column;
-		width: 40vw;
-	}
-
-	ul li {
-		list-style: none;
-	}
-	ul li a {
-		font-size: 3em;
-		color: #3B403E;
-		text-decoration: none;
-		padding: 2rem 4rem;
-		border-top: 1px solid #3B403E;
-		border-right: 1px solid #3B403E;
-		border-left: 1px solid #3B403E;
-		display: block;
-	}
-
-    ul li:last-of-type a {
-    	border-bottom: 1px solid #3B403E;
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IZOLYATSIA Xmas Archive</title>
+  <meta property="og:title" content="IZOLYATSIA Xmas Archive">
+  <meta property="og:image" content="./img/cards/2026.jpg">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <style>
+    :root {
+      --bg: #e6e7e8;
+      --ink: #3B403E;
+      --accent: #8C2108;
+      --card: #ffffff;
     }
-	ul li a:hover {
-		color: #fff;
-		background:#3B403E;
-	}
-    .cont {
-    	display: flex;
-    	flex-direction: column; 
-    	justify-items: center;
-    	width: 100%;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Roboto', Arial, sans-serif;
     }
-    .cont_i {
-    	margin: 0 auto;
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
     }
-</style>
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px 32px;
+      margin-bottom: 40px;
+    }
+    header img {
+      display: block;
+      width: 280px;
+      max-width: 100%;
+      height: auto;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      display: block;
+      height: 100%;
+      background: var(--card);
+      color: inherit;
+      text-decoration: none;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,.08);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover,
+    .card:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+    .card:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .media {
+      position: relative;
+      display: block;
+      aspect-ratio: 4 / 3;
+    }
+    .media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .media img.cover { object-fit: cover; }
+    .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.12);
+    }
+    .badge {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.7);
+      color: #fff;
+      font-size: .8rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .year {
+      display: block;
+      padding: 14px 18px 16px;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .card:hover .year { color: var(--accent); }
+    @media (prefers-reduced-motion: reduce) {
+      .card { transition: none; }
+      .card:hover, .card:focus-visible { transform: none; }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 32px 16px 48px; }
+      .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .year { font-size: 1.25rem; padding: 10px 12px 12px; }
+      .badge { left: 8px; bottom: 8px; font-size: .7rem; }
+    }
+  </style>
 </head>
-
 <body>
-<div class="cont"><div class="cont_i">
-<h1>IZOLYATSIA Xmas Archives</h1>
-<ul>
-<li><a href="./2011">2011</a></li>
-<li><a href="./2012">2012</a></li>
-<li><a href="./2013">2013</a></li>
-<li><a href="./2014">2014</a></li>
-<li><a href="./2015">2015</a></li>
-<li><a href="./2016">2016</a></li>
-<li><a href="./2017">2017</a></li>
-<li><a href="./2018">2018</a></li>
-<li><a href="./2019">2019</a></li>
-<li><a href="./2020">2020</a></li>
-<li><a href="./2021">2021</a></li>
-<li><a href="./2022">2022</a></li>
-<li><a href="./2023">2023</a></li>
-<li><a href="./2024">2024</a></li>
-<li><a href="./2025">2025</a></li>
-<li><a href="./2026">2026</a></li>
-</ul>  
-</div></div>
-
+<div class="wrap">
+  <header>
+    <img src="./img/izo-logo.png" width="1217" height="202" alt="IZOLYATSIA. Platform for cultural initiatives">
+    <h1>Xmas Archive</h1>
+  </header>
+  <ul class="grid">
+    <li>
+      <a class="card" href="./2026/">
+        <span class="media" style="background:#777878">
+          <img src="./img/cards/2026.jpg" width="900" height="900" alt="IZOLYATSIA holiday greeting 2026" loading="eager">
+        </span>
+        <span class="year">2026</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2025/">
+        <span class="media" style="background:#00376e">
+          <img src="./img/cards/2025.jpg" width="900" height="435" alt="IZOLYATSIA holiday greeting 2025" loading="eager">
+        </span>
+        <span class="year">2025</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2024/">
+        <span class="media" style="background:#525049">
+          <img src="./img/cards/2024.jpg" width="778" height="900" alt="IZOLYATSIA holiday greeting 2024" loading="eager">
+        </span>
+        <span class="year">2024</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2023/">
+        <span class="media" style="background:#12302b">
+          <img src="./img/cards/2023.jpg" width="900" height="435" alt="IZOLYATSIA holiday greeting 2023" loading="eager">
+        </span>
+        <span class="year">2023</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2022/">
+        <span class="media" style="background:#14181c">
+          <span class="placeholder" aria-hidden="true">2022</span>
+        <span class="badge">&#9654; Video</span>
+        </span>
+        <span class="year">2022</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2021/">
+        <span class="media" style="background:#817e6b">
+          <img src="./img/cards/2021.jpg" width="900" height="506" alt="IZOLYATSIA holiday greeting 2021" loading="lazy">
+        </span>
+        <span class="year">2021</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2020/">
+        <span class="media" style="background:#d8b9b5">
+          <img src="./img/cards/2020.jpg" width="900" height="525" alt="IZOLYATSIA holiday greeting 2020" loading="lazy">
+        </span>
+        <span class="year">2020</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2019/">
+        <span class="media" style="background:#d8dcdf">
+          <img src="./img/cards/2019.jpg" width="900" height="434" alt="IZOLYATSIA holiday greeting 2019" loading="lazy">
+        </span>
+        <span class="year">2019</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2018/">
+        <span class="media" style="background:#fef200">
+          <img src="./img/cards/2018.jpg" width="900" height="900" alt="IZOLYATSIA holiday greeting 2018" loading="lazy">
+        </span>
+        <span class="year">2018</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2017/">
+        <span class="media" style="background:#d4722a">
+          <img src="./img/cards/2017.jpg" width="900" height="213" alt="IZOLYATSIA holiday greeting 2017" loading="lazy">
+        </span>
+        <span class="year">2017</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2016/">
+        <span class="media" style="background:#131831">
+          <img src="./img/cards/2016.jpg" width="900" height="441" alt="IZOLYATSIA holiday greeting 2016" loading="lazy">
+        </span>
+        <span class="year">2016</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2015/">
+        <span class="media" style="background:#929b99">
+          <img src="./img/cards/2015.jpg" width="900" height="900" alt="IZOLYATSIA holiday greeting 2015" loading="lazy">
+        </span>
+        <span class="year">2015</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2014/">
+        <span class="media" style="background:#8e6957">
+          <img src="./img/cards/2014.jpg" width="900" height="600" alt="IZOLYATSIA holiday greeting 2014" loading="lazy" class="cover">
+        <span class="badge">&#9654; Video</span>
+        </span>
+        <span class="year">2014</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2013/">
+        <span class="media" style="background:#bebec0">
+          <img src="./img/cards/2013.jpg" width="900" height="441" alt="IZOLYATSIA holiday greeting 2013" loading="lazy">
+        </span>
+        <span class="year">2013</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2012/">
+        <span class="media" style="background:#6e6c72">
+          <img src="./img/cards/2012.jpg" width="900" height="471" alt="IZOLYATSIA holiday greeting 2012" loading="lazy">
+        </span>
+        <span class="year">2012</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="./2011/">
+        <span class="media" style="background:#ffffff">
+          <img src="./img/cards/2011.jpg" width="800" height="562" alt="IZOLYATSIA holiday greeting 2011" loading="lazy">
+        </span>
+        <span class="year">2011</span>
+      </a>
+    </li>
+  </ul>
+</div>
 </body>
 </html>
