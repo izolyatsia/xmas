@@ -203,3 +203,95 @@
 		.year-arrow:focus-visible { background: #e6e7e8; color: #111; }
 		.year-arrow .year-arrow-label { background: #e6e7e8; color: #111; }
 	}
+
+	/* =====================================================================
+	   Phones: content fills the screen with a small gutter; nav becomes a
+	   swipeable single row; prev/next arrows move to the bottom corners.
+	   The legacy pages are fixed-width e-mail templates, so this overrides
+	   their inline widths per template.
+	   ===================================================================== */
+	@media (max-width: 700px) {
+		html, body { overflow-x: hidden; }
+		body { padding-bottom: 76px !important; }
+
+		/* --- nav: one swipeable row, bigger tap targets --- */
+		.cont { margin-left: 0; width: 100%; }
+		.cont ul {
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			gap: 2px;
+			margin: 0;
+			padding: 8px 12px;
+			overflow-x: auto;
+			overscroll-behavior-x: contain;
+			scrollbar-width: none;
+			-webkit-overflow-scrolling: touch;
+			-webkit-mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent 100%);
+			        mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent 100%);
+		}
+		.cont ul::-webkit-scrollbar { display: none; }
+		.cont ul li { flex: none; margin: 0; }
+		.cont ul li a { display: block; padding: 9px 11px; border-radius: 999px; font-size: 16px; line-height: 1; }
+		.cont ul li a.active { border-bottom: 0; background: #111; color: #fff; }
+		/* tree stays pinned at the left while the years scroll under it */
+		.cont ul li.nav-home {
+			position: sticky; left: -12px; z-index: 1;
+			margin: -8px 4px -8px -12px; padding: 8px 6px 8px 12px;
+			background: #fff;
+		}
+		body.plain .cont ul li.nav-home { background: #e6e7e8; }
+		.cont ul li.nav-home a { margin-top: 0; padding: 0; }
+
+		/* --- arrows: bottom corners, thumb reach --- */
+		.year-arrow { top: auto; bottom: 14px; margin-top: 0; width: 44px; height: 44px; }
+		.year-arrow.prev { left: 12px; }
+		.year-arrow.next { right: 12px; }
+		.year-arrow .year-arrow-label { display: none; }
+
+		/* --- credits: full width of their column --- */
+		.credit { width: auto !important; align-self: stretch; }
+
+		/* --- 2011, 2012: column of photos --- */
+		body > div[style*="flex-direction: column"] { padding: 4px 12px 0; box-sizing: border-box; }
+		img.img { width: 100% !important; box-sizing: border-box; margin: 12px 0 !important; }
+
+		/* --- 2013: absolutely centred framed card --- */
+		html:has(#wrap), html:has(#wrap) body { height: auto !important; overflow: auto !important; }
+		#wrap { position: static !important; display: block; margin: 12px !important; }
+		#frame { display: block !important; width: auto !important; height: auto !important; padding: 8px !important; }
+		#frame img { width: 100% !important; height: auto !important; }
+
+		/* --- 2014: centred video --- */
+		body > div[style*="100vh"] { height: auto !important; padding: 12px; box-sizing: border-box; }
+		body > div[style*="100vh"] iframe { width: 100% !important; height: auto !important; aspect-ratio: 779 / 482; }
+
+		/* --- 2015, 2016: .txt columns --- */
+		.txt { width: auto !important; margin: 0 12px !important; padding: 0 !important; }
+		.txt img { width: 100% !important; height: auto !important; }
+		.txt table, table[width="575px"], table[width="775px"] { width: 100% !important; }
+		.txt table td { display: block; text-align: left !important; padding: 0 0 6px !important; }
+		table[width="575px"] { margin: 12px auto !important; padding: 0 12px; box-sizing: border-box; }
+		table[width="575px"] img { width: 100% !important; height: auto !important; }
+
+		/* --- 2017–2026: 640px e-mail template --- */
+		#main-table { width: 100% !important; margin: 0 !important; padding: 0 12px !important; box-sizing: border-box; }
+		#bodyTable { width: 100% !important; padding: 0 !important; }
+		img.picture { width: 100% !important; max-width: 100% !important; height: auto !important; }
+		img.logo { width: 70% !important; max-width: 320px; height: auto !important; }
+		td[height="50"], td[height="40"] { height: 12px !important; }
+		td[height="20"] { height: 8px !important; }
+		.main-event-text, .content-right-column { padding: 16px !important; }
+		.mail-block-picture td > div { padding: 14px 16px 18px !important; }
+		.no-left-padding { width: 100% !important; padding-left: 0 !important; float: none !important; }
+		.display-none { display: none !important; }
+		h1.title { font-size: 1.2em !important; }
+
+		/* --- 2022: 70%-wide video table --- */
+		#bodyTable[width="70%"] { width: 100% !important; }
+		#bodyTable[width="70%"] .container { margin-bottom: 0 !important; }
+	}
+	@media (max-width: 700px) and (prefers-color-scheme: dark) {
+		.cont ul li a.active { background: #f1f1f2; color: #111; }
+		.cont ul li.nav-home,
+		body.plain .cont ul li.nav-home { background: #1b1c1e; }
+	}

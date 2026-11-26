@@ -43,3 +43,11 @@
     document.head.appendChild(s);
   }
 })();
+
+// Phones: the nav is a horizontally scrolling row; bring the current year into view.
+document.addEventListener('DOMContentLoaded', function () {
+  var ul = document.querySelector('.cont ul');
+  var a = ul && ul.querySelector('a.active');
+  if (!ul || !a || ul.scrollWidth <= ul.clientWidth) return;
+  ul.scrollLeft = a.offsetLeft - ul.offsetLeft - (ul.clientWidth - a.offsetWidth) / 2;
+});

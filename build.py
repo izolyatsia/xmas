@@ -89,6 +89,7 @@ def render_head(site, e):
     desc = esc(f'{e["description"]} {site["description_suffix"].format(**site)}')
     img = f'{base}/img/og/{y}.jpg'
     lines = [
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
         f'<meta name="description" content="{desc}">',
         '<meta property="og:type" content="website">',
         f'<meta property="og:site_name" content="{esc(site["name"])}">',
